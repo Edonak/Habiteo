@@ -1,15 +1,14 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
 
 
 export default function NavbarLink() {
     return (
-        <ul className='flex '>
-            <NavLink to='/rent'>Louer</NavLink>
-            <NavLink to='/sell'>Vendre</NavLink>
-            <NavLink to='/buy'>Acheter</NavLink>
-            <NavLink to='/display'>Afficher</NavLink>
-            <NavLink to='/rental'>Gérer les Locations</NavLink>
+        <ul className='flex justify-between gap-10 text-orange-500 font-semibold'>
+            <li to='/rent'>Louer</li>
+            <li to='/sell'>Vendre</li>
+            <li to='/buy'>Acheter</li>
+            <li to='/display'>Afficher</li>
+            <li to='/rental'>Gérer les Locations</li>
         </ul>
     );
 }

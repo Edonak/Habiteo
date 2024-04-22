@@ -11,19 +11,19 @@ export default function Navbar() {
     };
     return (
         <>
-            <div className='bg-dark-background flex-wrap sticky top-0 z-[20] mx-auto flex w-full items-center justify-between border-b border-gray-500 pb-8 '>
+            <header className='bg-dark-background flex-wrap sticky top-0 z-[20] mx-auto flex w-full items-center justify-between border-b border-gray-500 pb-8'>
                 <Logo />
                 <div className='hidden md:flex'>
                     <NavbarLink />
                 </div>
                 <div className='md:hidden'>
-                    <button onClick={toggleNavbar}>{isOpen ? <X /> : <Menu />}</button>
+                    <button className='pt-5' onClick={toggleNavbar}>{isOpen ? <X /> : <Menu />}</button>
                 </div>
-            </div>
+            </header>
             {
-                isOpen && (<div className='flex flex-col items-center basis-full'>
+                isOpen && (<header className='flex flex-col items-center basis-full'>
                     <NavbarLink />
-                </div>)
+                </header>)
             }
         </>
     );

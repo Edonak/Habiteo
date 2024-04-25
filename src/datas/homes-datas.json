@@ -3,59 +3,59 @@
         {
         "id":"1",
         "type":"location",
-        "adresse":"",
+        "adresse":"17 B bis Tumikia Q/ 7 C/ N'djili",
         "description":"",
-        "nombreDePiece":"",
+        "nombreDePiece":"3 chambres/2 salons/ 2 salles de bain/ Cuisine",
         "photoUrl":"./../assets/images/maisonlocation 9",
-        "disponibilite":"",
-        "propietaire":"",
-        "prix":""
+        "disponibilite":"Disponible",
+        "propietaire":"Nakasila Edouard",
+        "prix":"250 $"
     },
         {
         "id":"2",
-        "type":"vente",
-        "adresse":"",
-        "surface":"",
-        "description":"",
-        "nombreDePiece":"",
-        "photoUrl":"./../assets/images/",
-        "disponibilite":"",
-        "propietaire":"",
-        "prix":""
+        "type":"location",
+        "adresse":"125 luwozi Q/ Super C/Lemba",
+        "description":"Maison en etage 1 R+1",
+        "nombreDePiece":"8 chambres/ 2 salons /3 salles de bain/ 2 cusine",
+        "photoUrl":"./../assets/images/maisonlocation 10",
+        "disponibilite":"Disponible",
+        "propietaire":"Igo TANZAMBI",
+        "prix":"450 $"
     },
         {
         "id":"3",
+        "type":"location",
+        "adresse":"17 Orientation Q/ Sans-fils C/Masina",
+        "description":"Maison disponible à partir du 01 du mois prochain",
+        "nombreDePiece":"4 chambre/ 1 douche/ 1 salon/ 1 cuisine",
+        "photoUrl":"./../assets/images/maisonlocation 8",
+        "disponibilite":"Disponible",
+        "propietaire":"MAKEMBI Joseph",
+        "prix":"200 $"
+    },
+    {
+        "id":"4",
         "type":"vente",
-        "adresse":"",
+        "adresse":"14 Revolution, Q/ C/Maluku",
         "surface":"",
         "description":"",
         "nombreDePiece":"",
-        "photoUrl":"./../assets/images/",
+        "photoUrl":"./../assets/images/Maisonachat 1",
         "disponibilite":"",
-        "propietaire":"",
-        "prix":""
-    },
-        {
-        "id":"4",
-        "type":"location",
-        "adresse":"",
-        "description":"",
-        "nombreDePiece":"",
-        "photoUrl":"./../assets/images/maisonlocation 10",
-        "disponibilite":"",
-        "propietaire":"",
-        "prix":""
+        "propietaire":"Sandra KASONGO",
+        "prix":"10.000$"
     },
         {
         "id":"5",
-        "type":"location",
-        "adresse":"",
+        "type":"vente",
+        "adresse":"11082 B Batandu Q/BATANDU C/ MATETE",
+        "surface":"",
         "description":"",
         "nombreDePiece":"",
-        "photoUrl":"./../assets/images/maisonlocation 8",
+        "photoUrl":"./../assets/images/Maisonachat 6",
         "disponibilite":"",
-        "propietaire":"",
-        "prix":""
+        "propietaire":"KUSEKANA Luc-Albert",
+        "prix":"12.000$"
     },
         {
         "id":"6",
@@ -63,7 +63,7 @@
         "adresse":"",
         "description":"",
         "nombreDePiece":"",
-        "photoUrl":"./../assets/images/maisonlocation ",
+        "photoUrl":"./../assets/images/Maisonlocation 2 ",
         "disponibilite":"",
         "propietaire":"",
         "prix":""
@@ -71,14 +71,14 @@
         {
         "id":"7",
         "type":"vente",
-        "adresse":"",
+        "adresse":"12 Emancipation Q/ Camp Riche C/ Lemba",
         "surface":"",
         "description":"",
         "nombreDePiece":"",
-        "photoUrl":"./../assets/images/",
+        "photoUrl":"./../assets/images/Maisonachat 8",
         "disponibilite":"",
-        "propietaire":"",
-        "prix":""
+        "propietaire":"Sam SAMIBWA",
+        "prix":"17.000$"
     },
         {
         "id":"8",
@@ -87,7 +87,7 @@
         "surface":"",
         "description":"",
         "nombreDePiece":"",
-        "photoUrl":"./../assets/images/",
+        "photoUrl":"./../assets/images/Maisonachat 12",
         "disponibilite":"",
         "propietaire":"",
         "prix":""
@@ -95,14 +95,14 @@
         {
         "id":"9",
         "type":"vente",
-        "adresse":"",
+        "adresse":"1235 Colonel Mondjibu Q/ C/ Gombe",
         "surface":"",
         "description":"",
         "nombreDePiece":"",
-        "photoUrl":"./../assets/images/",
+        "photoUrl":"./../assets/images/Maisonachat 10",
         "disponibilite":"",
-        "propietaire":"",
-        "prix":""
+        "propietaire":"Herick MANDALA",
+        "prix":"200.000$"
     },
         {
         "id":"10",
@@ -110,7 +110,7 @@
         "adresse":"",
         "description":"",
         "nombreDePiece":"",
-        "photoUrl":"./../assets/images/maisonlocation ",
+        "photoUrl":"./../assets/images/maisonlocation 12",
         "disponibilite":"",
         "propietaire":"",
         "prix":""
@@ -121,7 +121,18 @@
         "adresse":"",
         "description":"",
         "nombreDePiece":"",
-        "photoUrl":"./../assets/images/maisonlocation ",
+        "photoUrl":"./../assets/images/maisonlocation 5",
+        "disponibilite":"",
+        "propietaire":"",
+        "prix":""
+    },
+        {
+        "id":"12",
+        "type":"location",
+        "adresse":"",
+        "description":"",
+        "nombreDePiece":"",
+        "photoUrl":"./../assets/images/maisonlocation 3",
         "disponibilite":"",
         "propietaire":"",
         "prix":""

@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageVente from './../../assets/images/image vente.png';
 import GeneralButton from '../primaryComponents/generalButton';
-export default function SaleDetail() {
+export default function SaleDetail({onClick}) {
     return (
         <section className='sale-detail w-[100%] bg-gray-100 bg-opacity-90'>
             <div className='w-[80%] flex justify-center items-center bg-gray-500 min-h-screen gap-3rem'>
@@ -13,7 +13,7 @@ export default function SaleDetail() {
                     Dans ce cas, vous êtes responsable de la préparation de la maison,
                     du marketing, des visites et des négociations.
                 </p>
-                <GeneralButton value='Mettre la maison en vente' />
+                <GeneralButton value='Mettre la maison en vente' onClick={onClick}/>
             </div>
             <div className='w-[40%]'>
                 <img src={ImageVente} alt="" />

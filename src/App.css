@@ -1,9 +1,23 @@
-.house-detail{
-    margin-top: 310px;
+.house-detail {
     justify-content: center;
     gap: 2rem;
     text-align: justify;
 }
-.sale-detail{
-    margin-top: 340px;
+
+.section {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+
+}
+.section1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 66vh;
+}
+.section2 {
+    margin: auto;
 }

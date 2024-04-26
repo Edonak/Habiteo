@@ -11,7 +11,7 @@ export default function Navbar() {
     };
     return (
         <>
-            <header className='bg-dark-background flex-wrap sticky top-0 z-[20] z-10 mx-auto flex w-full items-center justify-between border-b border-gray-500 pb-8'>
+            <header className='bg-white flex-wrap sticky top-0 z-[20] z-10 mx-auto sticky flex w-full items-center justify-between border-b border-gray-100 pb-8'>
                 <Logo />
                 <div className='hidden md:flex'>
                     <NavbarLink />

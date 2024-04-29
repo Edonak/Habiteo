@@ -7,6 +7,10 @@ export default function Display() {
     <section>
         <Navbar />
         <main>
+        <div className='pb-12 pl-12'>
+                <h2 className='text-[1.3rem] font-medium text-[#004AAD]'>Voir toutes les maisons disponibles</h2>
+                <p>Vous pouvez voir les maison en location et les maisons en vente</p>
+        </div>
 
         </main>
         <Footer />

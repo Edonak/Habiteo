@@ -6,7 +6,7 @@ import VenteImage from './../../assets/images/image card vendre.svg';
 
 export default function HouseDetail() {
     return (
-        <section className='flex w-[100%] house-detail gap-8 mt-12 bg-white justify-center text-justify'>
+        <section className='flex w-[100%] house-detail gap-8 mt-12 bg-white justify-center text-justify md:flex md:flex-col'>
             <div className='w-[25%] border-solid rounded-3xl shadow-2xl flex flex-col items-center house-card'>
                 <div className=''>
                     <img src={VenteImage} alt="" />

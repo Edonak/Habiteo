@@ -14,7 +14,7 @@ export default function SellDetail({ onClick }) {
                         Dans ce cas, vous êtes responsable de la préparation de la maison,
                         du marketing, des visites et des négociations, n'ignorant pas que vous n'avez pas d'agents pour la suivie.
                     </p>
-                    <Link to='/sell:sellhouse'> <ButtonVente value='Mettre la maison en vente' onClick={onClick}/> </Link>
+                    <Link to='/login'> <ButtonVente value='Mettre la maison en vente' onClick={onClick}/> </Link>
                 </div>
                 <div className='w-[4=50%]'>
                     <img src={ImageVente} alt="" />

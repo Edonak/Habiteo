@@ -1,4 +1,3 @@
-import React from 'react';
 import NavbarLink from '../header/navbarLink';
 import { FaFacebook, FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Logo from './../../assets/images/Habiteo-logo.png'
@@ -23,7 +22,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyright">
-        &copy; 2024 Habiteo / Tout Droits Reservés
+        &copy; 2024 Habiteo | Tout Droits Reservés
       </div>
     </footer>
   );

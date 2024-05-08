@@ -6,9 +6,8 @@ import BuyHouse from './pages/buyHouse'
 import SellHouse from './pages/sellHouse'
 import Display from './pages/display'
 import SaleForm from './component/saleHouse/saleForm'
-import LoginPage from './pages/login'
 import SignupPage from './pages/signup'
-import RentalGeranceLocation from './pages/rentalGeranceLocation'
+import LoginPage from './component/authentification/login'
 
 function App() {
   return (
@@ -19,10 +18,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/rent" element={<RentalHouse />}/>
         <Route path="/sell" element={ <SellHouse /> } />
-          <Route path='/sell:sellhouse' element={<LoginPage />} />
+          <Route path='/login' element={<LoginPage />} />
         <Route path="/buy" element={ <BuyHouse /> } />
         <Route path="/display" element={ <Display /> } />
-        <Route path="/rental" element={ <RentalGeranceLocation /> } />
+        <Route path="/rental" element={ <RentalHouse /> } />
         <Route path="/signup" element={ <SignupPage /> } />
       </Routes>
     </BrowserRouter>

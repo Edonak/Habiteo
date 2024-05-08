@@ -1,12 +1,12 @@
 {
-    "house" :[
+    "houseLocation" :[
         {
         "id":"1",
         "type":"location",
         "adresse":"17 B bis Tumikia Q/ 7 C/ N'djili",
         "description":"",
         "nombreDePiece":"3 chambres/2 salons/ 2 salles de bain/ Cuisine",
-        "photoUrl":"./../assets/images/maisonlocation 9",
+        "photoUrl":"/../assets/images/maisonlocation 9",
         "disponibilite":"Disponible",
         "propietaire":"Nakasila Edouard",
         "prix":"250 $"
@@ -33,32 +33,9 @@
         "propietaire":"MAKEMBI Joseph",
         "prix":"200 $"
     },
-    {
+        
+        {
         "id":"4",
-        "type":"vente",
-        "adresse":"14 Revolution, Q/ C/Maluku",
-        "surface":"",
-        "description":"",
-        "nombreDePiece":"",
-        "photoUrl":"./../assets/images/Maisonachat 1",
-        "disponibilite":"",
-        "propietaire":"Sandra KASONGO",
-        "prix":"10.000$"
-    },
-        {
-        "id":"5",
-        "type":"vente",
-        "adresse":"11082 B Batandu Q/BATANDU C/ MATETE",
-        "surface":"",
-        "description":"",
-        "nombreDePiece":"",
-        "photoUrl":"./../assets/images/Maisonachat 6",
-        "disponibilite":"",
-        "propietaire":"KUSEKANA Luc-Albert",
-        "prix":"12.000$"
-    },
-        {
-        "id":"6",
         "type":"location",
         "adresse":"",
         "description":"",
@@ -69,43 +46,7 @@
         "prix":""
     },
         {
-        "id":"7",
-        "type":"vente",
-        "adresse":"12 Emancipation Q/ Camp Riche C/ Lemba",
-        "surface":"",
-        "description":"",
-        "nombreDePiece":"",
-        "photoUrl":"./../assets/images/Maisonachat 8",
-        "disponibilite":"",
-        "propietaire":"Sam SAMIBWA",
-        "prix":"17.000$"
-    },
-        {
-        "id":"8",
-        "type":"vente",
-        "adresse":"",
-        "surface":"",
-        "description":"",
-        "nombreDePiece":"",
-        "photoUrl":"./../assets/images/Maisonachat 12",
-        "disponibilite":"",
-        "propietaire":"",
-        "prix":""
-    },
-        {
-        "id":"9",
-        "type":"vente",
-        "adresse":"1235 Colonel Mondjibu Q/ C/ Gombe",
-        "surface":"",
-        "description":"",
-        "nombreDePiece":"",
-        "photoUrl":"./../assets/images/Maisonachat 10",
-        "disponibilite":"",
-        "propietaire":"Herick MANDALA",
-        "prix":"200.000$"
-    },
-        {
-        "id":"10",
+        "id":"5",
         "type":"location",
         "adresse":"",
         "description":"",
@@ -116,7 +57,7 @@
         "prix":""
     },
         {
-        "id":"11",
+        "id":"6",
         "type":"location",
         "adresse":"",
         "description":"",
@@ -127,7 +68,7 @@
         "prix":""
     },
         {
-        "id":"12",
+        "id":"7",
         "type":"location",
         "adresse":"",
         "description":"",
@@ -136,6 +77,70 @@
         "disponibilite":"",
         "propietaire":"",
         "prix":""
+    }
+    ],
+
+    "housePurchase":[
+        {
+            "id":"1",
+            "type":"vente",
+            "adresse":"",
+            "surface":"",
+            "description":"",
+            "nombreDePiece":"",
+            "photoUrl":"./../assets/images/Maisonachat 12",
+            "disponibilite":"",
+            "propietaire":"",
+            "prix":""
+        },
+        {
+            "id":"2",
+            "type":"vente",
+            "adresse":"1235 Colonel Mondjibu Q/ C/ Gombe",
+            "surface":"",
+            "description":"",
+            "nombreDePiece":"",
+            "photoUrl":"./../assets/images/Maisonachat 10",
+            "disponibilite":"",
+            "propietaire":"Herick MANDALA",
+            "prix":"200.000$"
+        },
+        {
+            "id":"3",
+            "type":"vente",
+            "adresse":"11082 B Batandu Q/BATANDU C/ MATETE",
+            "surface":"",
+            "description":"",
+            "nombreDePiece":"",
+            "photoUrl":"./../assets/images/Maisonachat 6",
+            "disponibilite":"",
+            "propietaire":"KUSEKANA Luc-Albert",
+            "prix":"12.000$"
+        },
+        
+        {
+        "id":"4",
+        "type":"vente",
+        "adresse":"12 Emancipation Q/ Camp Riche C/ Lemba",
+        "surface":"",
+        "description":"",
+        "nombreDePiece":"",
+        "photoUrl":"./../assets/images/Maisonachat 8",
+        "disponibilite":"",
+        "propietaire":"Sam SAMIBWA",
+        "prix":"17.000$"
+    },
+     {
+        "id":"5",
+        "type":"vente",
+        "adresse":"14 Revolution, Q/ C/Maluku",
+        "surface":"",
+        "description":"",
+        "nombreDePiece":"",
+        "photoUrl":"./../assets/images/Maisonachat 1",
+        "disponibilite":"",
+        "propietaire":"Sandra KASONGO",
+        "prix":"10.000$"
     }
     ]
 }

@@ -4,7 +4,7 @@ import homeDatas from '../../datas/homes-datas.json';
 export default function HousePurchase() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleImages, setVisibleImages] = useState(3);
-
+const data = []
     useEffect(() => {
         if (homeDatas.house && Array.isArray(homeDatas.housePurchase)) {
             const visibleData = homeDatas.house.slice(currentIndex, currentIndex + visibleImages);
@@ -18,7 +18,7 @@ export default function HousePurchase() {
                 <h2 className='text-[1.3rem] font-medium text-[#004AAD]'>Achat Maison</h2>
                 <p>Acheter une maison en toute sécurité</p>
             </div>
-        <div className="flex w-[100%] justify-center ">
+        {homeDatas.housePurchase.length > 0? <div className="flex w-[100%] justify-center ">
           
             <div className='flex flex-wrap w-[80%] gap-9 justify-center'>
             {homeDatas.housePurchase.map((item, index) => (
@@ -34,7 +34,7 @@ export default function HousePurchase() {
             ))} 
             </div>
            
-        </div>
+        </div>: <p>Wait please</p>}
     </section>
     );
 }

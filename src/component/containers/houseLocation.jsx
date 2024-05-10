@@ -18,7 +18,7 @@ export default function HouseLocation() {
                 <h2 className='text-[1.3rem] font-medium text-[#004AAD]'>Location Maison</h2>
                 <p>Louer une maison de qualité en toute sécurité</p>
             </div>
-        <div className="flex w-[100%] justify-center ">
+       {homeDatas.houseLocation.length ? <div className="flex w-[100%] justify-center ">
           
             <div className='flex flex-wrap w-[80%] gap-9 justify-center'>
             {homeDatas.houseLocation.map((item, index) => (
@@ -34,7 +34,7 @@ export default function HouseLocation() {
             ))} 
             </div>
            
-        </div>
+        </div>: <p>Wait</p>}
     </section>
     );
 }

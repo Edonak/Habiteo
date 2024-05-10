@@ -5,12 +5,7 @@ export default function HousePurchase() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleImages, setVisibleImages] = useState(3);
 const data = []
-    useEffect(() => {
-        if (homeDatas.house && Array.isArray(homeDatas.housePurchase)) {
-            const visibleData = homeDatas.house.slice(currentIndex, currentIndex + visibleImages);
-            setVisibleImages(visibleData);
-        }
-    }, [currentIndex, visibleImages]);
+   
     
     return (
         <section className=" w-[100%] mb-12 p-2">

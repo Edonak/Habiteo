@@ -3,6 +3,7 @@ import GeneralButton from '../primaryComponents/generalButton';
 import LocationImage from './../../assets/images/Image card louer.svg';
 import ParcoursImage from './../../assets/images/Image card parcourir.svg';
 import VenteImage from './../../assets/images/image card vendre.svg';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function HouseDetail() {
     return (
@@ -16,8 +17,8 @@ export default function HouseDetail() {
                     <p>Quel que soit le chemin que vous empruntez pour vendre votre maison,
                         nous vous aidons pour que votre vente se passe en toute sécurité
                         et aboutir à une bonne réussite!</p>
-                    <div className='btn flex flex-col items-center pt-7'>
-                        <GeneralButton value="Vendre" />
+                    <div >
+                        <NavLink to='/sell' className='btn flex flex-col items-center pt-7'> <GeneralButton value="Vendre" /></NavLink>
                     </div>
                 </div>
             </div>
@@ -30,8 +31,8 @@ export default function HouseDetail() {
                     <p>Nous créons une expérience en ligne transparente,
                         depuis les achats sur le grand réseau de location
                         jusqu'à la demande d'inscription et le payement du loyer!</p>
-                    <div className='flex flex-col items-center pt-7'>
-                        <GeneralButton value="Louer" />
+                    <div>
+                        <NavLink to='/rent' className='btn flex flex-col items-center pt-7'> <GeneralButton value="Louer" /> </NavLink>
                     </div>
                 </div>
             </div>
@@ -44,8 +45,8 @@ export default function HouseDetail() {
                     <p>Trouvez votre place avec une expérience photo immersive
                         et le plus grand nombre d'annonces, y compris des choses
                         que vous ne trouverez nulle part ailleurs.!</p>
-                    <div className='flex flex-col items-center pt-7'>
-                        <GeneralButton value="Parcourir" />
+                    <div>
+                    <NavLink to='/display' className='btn flex flex-col items-center pt-7'> <GeneralButton value="Parcourir" /> </NavLink>
                     </div>
 
                 </div>

@@ -1,13 +1,12 @@
 import React from 'react'
-export function ButtonRentAndSellHouse({value}){
-<button type="button" className='border border-white hover:bg-white hover:text-orange-500 hover:border-none text-white py-1 px-2 rounded-full'>{value}</button>
-}
-export default function RentAndSellHouse() {
+import { ButtonRentAndSellHouseSearch } from './ButtonRentAndSellHouseSearch'
+
+export default function RentHouseSearch() {
     return (
         <section className='flex flex-col items-center'>
             <div className='flex justify-center gap-20 w-[100%] p-5 bg-orange-500'>
                 <input type="search" name="" id="" placeholder='Avenue, Quartier' className='focus:outline-none rounded-full text-center'/>                
-                <RentAndSellHouse value='A louer' />
+                <ButtonRentAndSellHouseSearch value='A louer' />
                 <select name="" id="" className='rounded-full text-center'>
                     <option value="someOption">50$ - 250$</option>
                     <option value="otherOption">250$ - 500$</option>

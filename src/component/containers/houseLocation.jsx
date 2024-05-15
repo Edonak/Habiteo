@@ -4,8 +4,6 @@ import homeDatas from '../../datas/homes-datas.json';
 export default function HouseLocation() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleImages, setVisibleImages] = useState(3);
-
-  
     
     return (
         <section className=" w-[100%] mb-12 p-2">

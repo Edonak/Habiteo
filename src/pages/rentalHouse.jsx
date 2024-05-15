@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../component/header/navbar';
 import Footer from '../component/footer/footer';
 import HouseLocation from '../component/containers/houseLocation';
+import RentHouseSearch from '../component/primaryComponents/rentHouseSearch';
 
 export default function RentalHouse() {
   
@@ -10,7 +11,11 @@ export default function RentalHouse() {
         <section>
             <Navbar />
             <main>
+                <RentHouseSearch />
+                <div>
                 <HouseLocation />
+                </div>
+                
             </main>
             <Footer />
         </section>

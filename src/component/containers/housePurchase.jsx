@@ -8,7 +8,7 @@ const data = []
    
     
     return (
-        <section className=" w-[100%] mb-12 p-2">
+        <section className=" w-[100%] mb-12 p-2 bg-blue-50 pb-8">
             <div className='pb-12 pl-12'>
                 <h2 className='text-[1.3rem] font-medium text-[#004AAD]'>Achat Maison</h2>
                 <p>Acheter une maison en toute sécurité</p>

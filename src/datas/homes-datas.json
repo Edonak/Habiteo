@@ -1,7 +1,7 @@
 {
     "houseLocation" :[
         {
-        "id":"1",
+        "id":1,
         "type":"location",
         "adresse":"17 B bis Tumikia Q/ 7 C/ N'djili",
         "description":"",
@@ -9,10 +9,12 @@
         "photoUrl":"/src/assets/images/maisonlocation 9.png",
         "disponibilite":"Disponible",
         "propietaire":"Nakasila Edouard",
-        "prix":"250 $"
+        "prix":"250 $",
+        "garentie":"6+1",
+        "numero":"+243822874347"
     },
         {
-        "id":"2",
+        "id":2,
         "type":"location",
         "adresse":"125 luwozi Q/ Super C/Lemba",
         "description":"Maison en etage 1 R+1",
@@ -20,10 +22,12 @@
         "photoUrl":"/src/assets/images/maisonlocation 10.png",
         "disponibilite":"Disponible",
         "propietaire":"Hugo TANZAMBI",
-        "prix":"450 $"
+        "prix":"450 $",
+        "garentie":"3+1",
+        "numero":"+243810263807"
     },
         {
-        "id":"3",
+        "id":3,
         "type":"location",
         "adresse":"17 Haube Q/ Mapela C/Masina",
         "description":"Maison disponible à partir du 01 du mois prochain",
@@ -31,11 +35,13 @@
         "photoUrl":"/src/assets/images/maisonlocation 8.png",
         "disponibilite":"Disponible",
         "propietaire":"MAKEMBI Joseph",
-        "prix":"200 $"
+        "prix":"200 $",
+        "garentie":"5+1",
+        "numero":"+243998398979"
     },
         
         {
-        "id":"4",
+        "id":4,
         "type":"location",
         "adresse":"128B kitusi Q/Mapela C/Masina",
         "description":"Maison en étage avec 2 appartements",
@@ -43,10 +49,12 @@
         "photoUrl":"/src/assets/images/maisonachat 2.webp",
         "disponibilite":"Disponible",
         "propietaire":"KIDIAMFUKA Justin",
-        "prix":"350$"
+        "prix":"350$",
+        "garentie":"10+1",
+        "numero":"+243821116906"
     },
         {
-        "id":"5",
+        "id":5,
         "type":"location",
         "adresse":"8 Q/Batandu C/ Matete",
         "description":"",
@@ -54,10 +62,12 @@
         "photoUrl":"/src/assets/images/maisonlocation 12.jpeg",
         "disponibilite":"Disponible",
         "propietaire":"Daddy ANAKEKA ",
-        "prix":"450$"
+        "prix":"450$",
+        "garentie":"6+1",
+        "numero":"+243844060541"
     },
         {
-        "id":"6",
+        "id":6,
         "type":"location",
         "adresse":"10 Mpese, Q/4, C/ N'djili",
         "description":"Seule dans la parcelle",
@@ -65,10 +75,12 @@
         "photoUrl":"/src/assets/images/maisonlocation 5.jpeg",
         "disponibilite":"Disponible",
         "propietaire":"Edouard NAKASILA",
-        "prix":"300$"
+        "prix":"300$",
+        "garentie":"7+1",
+        "numero":"+243822874347"
     },
         {
-        "id":"7",
+        "id":7,
         "type":"location",
         "adresse":"13 A Laic Q/12 C/N'djili",
         "description":"",
@@ -76,10 +88,12 @@
         "photoUrl":"/src/assets/images/maisonlocation 3.jpg",
         "disponibilite":"Disponible",
         "propietaire":"Erick Meseka",
-        "prix":"500$"
+        "prix":"500$",
+        "garentie":"3+1",
+        "numero":"+243822549860"
     },
         {
-        "id":"8",
+        "id":8,
         "type":"location",
         "adresse":"12 Haube Q/Sans-fils C/Masina",
         "description":"",
@@ -87,7 +101,9 @@
         "photoUrl":"/src/assets/images/maisonlocation 13.jpeg",
         "disponibilite":"Disponible",
         "propietaire":"Cardoso MAKILA",
-        "prix":"150$"
+        "prix":"150$",
+        "garentie":"10+1",
+        "numero":"+243822870000"
     }
     ],
 

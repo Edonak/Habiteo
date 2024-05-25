@@ -4,38 +4,57 @@ import { FaGoogle } from "react-icons/fa";
 import axios from 'axios';
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  let navigate = useNavigate;
+  const [connect, setConnect] = useState({
+    email:'',
+    password:''
+  });
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [errorMessage, setErrorMessage] = useState(null);
+  // const [isLoading, setIsLoading] = useState(false);
+ 
+  const onChange = (e) =>{
+    setConnect({...setConnect,[e.target.name]: e.target.value})
+  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true); // Indique que la requête est en cours
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    console.log(connect)
+    axios.post('http://localhost:6000/router/login', connect)
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+  }
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsLoading(true); // Indique que la requête est en cours
 
-    try {
-      const response = await axios.post('http://localhost:6000/router/login', {
-        email,
-        password,
-      });
+  //   try {
+  //     const response = await axios.post('http://localhost:6000/router/login', {
+  //       email,
+  //       password,
+  //     });
 
-      setEmail('');
-      setPassword('');
-      setErrorMessage(null);
-      setIsLoading(false);
+  //     setEmail('');
+  //     setPassword('');
+  //     setErrorMessage(null);
+  //     setIsLoading(false);
 
-      // Stocker le token en local storage (exemple)
-      localStorage.setItem('token', response.data.token);
+  //     // Stocker le token en local storage (exemple)
+  //     localStorage.setItem('token', response.data.token);
 
-      // Rediriger vers la page d'accueil ou une autre page protégée
-      window.location.href = '/'; // Remplacer par la route souhaitée
-    } catch (error) {
-      console.error(error);
-      setIsLoading(false);
-      setErrorMessage(error.response?.data?.message || 'Mot de Passe ou Email incorrect');
-    }
-  };
+  //     // Rediriger vers la page d'accueil ou une autre page protégée
+  //     window.location.href = '/'; // Remplacer par la route souhaitée
+  //   } catch (error) {
+  //     console.error(error);
+  //     setIsLoading(false);
+  //     setErrorMessage(error.response?.data?.message || 'Mot de Passe ou Email incorrect');
+  //   }
+  // };
 
+  // const [register, setRegister] = useState({
+
+  // });
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-gray-100">
       <div className="w-[350px] bg-white rounded-lg shadow-lg">
@@ -49,8 +68,9 @@ const LoginPage = () => {
             <input
               type="email"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={connect.email}
+              onChange={onChange}
               required
               className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -63,9 +83,10 @@ const LoginPage = () => {
             <input
               type="password"
               id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            required
+              name="password"
+              value={connect.password}
+              onChange={onChange}
+              required
               className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -73,13 +94,13 @@ const LoginPage = () => {
           <div className="px-4 py-3">
             <button
               type="submit"
-              disabled={isLoading}
+              // disabled={isLoading}
               className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              {isLoading ? 'Connexion...' : 'Se connecter'}
+            > Se Connecter
+              {/* {isLoading ? 'Connexion...' : 'Se connecter'} */}
             </button>
           </div>
-          {errorMessage && <p className="text-red-500 text-sm text-center">{errorMessage}</p>}
+          {/* {errorMessage && <p className="text-red-500 text-sm text-center">{errorMessage}</p>} */}
         </form>
 
 

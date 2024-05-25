@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from '../component/header/navbar';
 import HeroSection from '../component/heroSection/heroSection';
 import HouseDetail from '../component/containers/houseDetail';

@@ -1,75 +1,91 @@
-import React, { useState } from 'react';
-import { FaUpload } from 'react-icons/fa';
+import { useForm } from 'react-hook-form';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
-const SaleForm = ({showForm, setShowForm }) => {
-    const [commune, setCommune] = useState('');
-    const [name, setName] = useState('');
-    const [address, setAddress] = useState('');
-    const [rooms, setRooms] = useState('');
-    const [photo, setPhoto] = useState(null);
-    const [details, setDetails] = useState('');
-    const [communesList, setCommunesList] = useState(["Bandalungwa", "Barumbu", "Bumbu", "Gombe", "Kalamu", "Kasa-Vubu", "Kimbanseke", "Kinshasa", "Kintambo", "Kisenso", "Lemba", "Limete", "Lingwala", "Makala", "Maluku", "Masina", "Matete", "Mont-Ngafula", "N'djili", "Ngaba", "Ngaliema", "Ngiri-Ngiri", "Selembao"]);
+const SaleForm = () => {
+    // const handlePhotoChange = (event) => {
+    //     if (event.target.files && event.target.files[0]) {
+    //         setShowForm(URL.createObjectURL(event.target.files[0]));
+    //       }
+    // };
 
-    const handlePhotoChange = (event) => {
-        if (event.target.files && event.target.files[0]) {
-            setShowForm(URL.createObjectURL(event.target.files[0]));
-          }
-    };
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     console.log('Form submitted:', {
+    //         commune,
+    //         rooms,
+    //         photo,
+    //     });
+    // };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Form submitted:', {
-            commune,
-            rooms,
-            photo,
-        });
-    };
+    const { register, handleSubmit } = useForm()
+    const navigate = useNavigate()
+    const onSubmit = async (data) => {
+        try {
+            (console.log(data))
+            console.log(data);
+            await axios.post('http://localhost:3000/router/house', data)
+            console.log('Response', Response.data);
+        }
+        catch (error) {
+            console.log("error", error)
+        }
+    }
 
+
+    //     "userId":1,
+    //    "id":1,
+    //     "adresse":"17 bbiuzouz",
+    //     "surface":"1456497km",
+    //     "prix":"500$",
+    //     "nombreDePiece":4,
+    //     "photoUrl":"qhguizupipz",
+    //     "disponibilite":true,
+    //     "houseType":"Location",
+    //     "proprietaire":"hjgsihpz"
     return (
-        <form className="w-full max-w-sm mx-auto mt-4" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm mx-auto mt-4" >
             <div className="mb-4">
-                <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
-                    Nom
+                <label htmlFor="id" className="block text-gray-700 text-sm font-bold mb-2">
+                    Id Utilisateur
                 </label>
                 <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
+                    type="number"
+                    id="id"
+                    name="id"
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    {...register("userId", {
+                        required: true,
+                    })}
                 />
             </div>
             <div className="mb-4">
                 <label htmlFor="address" className="block text-gray-700 text-sm font-bold mb-2">
-                    Adresse
+                    Adresse Maison
                 </label>
                 <input
                     type="text"
                     id="address"
                     name="address"
-                    value={address}
-                    onChange={(event) => setAddress(event.target.value)}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+
+                    {...register("adresse", {
+                        required: true,
+                    })} />
             </div>
             <div className="mb-4">
-                <label htmlFor="commune" className="block text-gray-700 text-sm font-bold mb-2">
-                    Commune
+                <label htmlFor="prix" className="block text-gray-700 text-sm font-bold mb-2">
+                    Prix
                 </label>
-                <select
-                    id="commune"
-                    name="commune"
-                    value={commune}
-                    onChange={(event) => setCommune(event.target.value)}
+                <input
+                    type="number"
+                    id="prix"
+                    name="prix"
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                    {communesList.map((commune) => (
-                        <option key={commune} value={commune}>
-                            {commune}
-                        </option>
-                    ))}
-                </select>
+                    {...register("prix", {
+                        required: true,
+                    })}
+                />
             </div>
 
             <div className="mb-4">
@@ -80,8 +96,9 @@ const SaleForm = ({showForm, setShowForm }) => {
                     type="number"
                     id="rooms"
                     name="rooms"
-                    value={rooms}
-                    onChange={(event) => setRooms(event.target.value)}
+                    {...register("nombreDePiece", {
+                        required: true,
+                    })}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>
@@ -94,23 +111,50 @@ const SaleForm = ({showForm, setShowForm }) => {
                     type="file"
                     id="photo"
                     name="photo"
-                    onChange={handlePhotoChange}
+                    {...register("photoUrl", {
+                        required: true,
+                    })}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-                {photo && (
-                    <img src={photo} alt="Uploaded photo" className="mt-2 w-20 h-20 rounded-lg" />
-                )}
             </div>
             <div className="mb-4">
-                <label htmlFor="details" className="block text-gray-700 text-sm font-bold mb-2">
-                    Détails
+                <label htmlFor="houseType" className="block text-gray-700 text-sm font-bold mb-2">
+                    Type de maison
                 </label>
-                <textarea
-                    id="details"
-                    name="details"
-                    value={details}
-                    onChange={(event) => setDetails(event.target.value)}
-                    className="shadow"></textarea>
+                <select id="houseType" name="houseType"  {...register("houseType", {
+                    required: true,
+                })} className="rounded-md border border-gray-300 px-2 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                    <option name="houseType" value="Location" >Location</option>
+                    <option name="houseType" value="Vente">Vente</option>
+                </select>
+            </div>
+            <div className="mb-4">
+                <label htmlFor="propriétaire" className="block text-gray-700 text-sm font-bold mb-2">
+                    Propriétaire
+                </label>
+                <input
+                    type="text"
+                    id="propriétaire"
+                    name="propriétaire"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+
+                    {...register("proprietaire", {
+                        required: true,
+                    })} />
+            </div>
+            <div className="mb-4">
+                <label htmlFor="surface" className="block text-gray-700 text-sm font-bold mb-2">
+                    Surface
+                </label>
+                <input
+                    type="text"
+                    id="surface"
+                    name="surface"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+
+                    {...register("surface", {
+                        required: true,
+                    })} />
             </div>
 
             <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-300">

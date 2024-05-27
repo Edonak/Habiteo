@@ -25,6 +25,7 @@ function App() {
         <Route path="/signup" element={ <SignupPage /> } />
         <Route path="/form" element ={<SaleForm />} />
         <Route path="/:renthouse" element={<Rent />}/>
+        <Route path="/saleHouse" element={<SaleForm />}/>
       </Routes>
     </BrowserRouter>
     </>

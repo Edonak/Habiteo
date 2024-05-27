@@ -1,30 +1,47 @@
-import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
 import axios from 'axios';
+import { useForm } from 'react-hook-form';
+
 
 const LoginPage = () => {
-  let navigate = useNavigate;
-  const [connect, setConnect] = useState({
-    email:'',
-    password:''
-  });
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [errorMessage, setErrorMessage] = useState(null);
-  // const [isLoading, setIsLoading] = useState(false);
+  let navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
  
   const onChange = (e) =>{
     setConnect({...setConnect,[e.target.name]: e.target.value})
   }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    const formData = {
+      email: connect.email,
+      password: connect.password,
+    };
+  
+    try {
+      // Submit form data (formData) to your API using axios or similar
+      const response = await axios.post('http://localhost:3000/router/login', formData);
+  
+      // Process response and display success or error messages
+      // ...
+  
+    } catch (error) {
+      console.error(error);
+      // Handle errors appropriately
+      // ...
+    }
+  };
+  
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    console.log(connect)
-    axios.post('http://localhost:6000/router/login', connect)
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
-  }
+  // const handleSubmit = (e) =>{
+  //   e.preventDefault()
+  //   console.log(connect)
+  //   axios.post('http://localhost:3000/router/login', connect)
+  //   .then(res => console.log(res))
+  //   .catch(err => console.log(err))
+  // }
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
   //   setIsLoading(true); // Indique que la requête est en cours
@@ -73,8 +90,11 @@ const LoginPage = () => {
               onChange={onChange}
               required
               className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              {...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })}
             />
+            
           </div>
+          {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
           <div className="px-4 py-2">
             <label htmlFor="password" className="block text-sm font-medium mb-1">
@@ -84,12 +104,14 @@ const LoginPage = () => {
               type="password"
               id="password"
               name="password"
+              {...register('password', { required: true, minLength: 8 })}
               value={connect.password}
               onChange={onChange}
               required
               className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
+          {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
 
           <div className="px-4 py-3">
             <button

@@ -14,7 +14,9 @@ export default function HouseLocation() {
             <div className='flex flex-wrap w-[80%] gap-9 justify-center'>
             {homeDatas.houseLocation.map((item, index) => (
                 <div key={index} className='w-[20%] border-solid rounded-xl sell-card gap-10'>
-                    <NavLink to={`/${item.renthouse}`}> <img src={item.photoUrl} alt="" className="w-[100%] h-[20vh] rounded-t-xl" /></NavLink>
+                    <NavLink to={`/${item.renthouse}`}> 
+                    <img src={item.photoUrl} alt="" className="w-[100%] h-[20vh] rounded-t-xl" />
+                    </NavLink>
                     <div className='sell-card-content px-2'>
                         <p className='font-bold'>{item.prix}</p>
                         <p className='text-sm'>{item.nombreDePiece}</p>

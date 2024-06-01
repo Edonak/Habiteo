@@ -1,83 +1,44 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
-import axios from 'axios';
+import axios from 'axios'; // Re-introduced for API calls
 import { useForm } from 'react-hook-form';
-
+import { useState } from 'react';
 
 const LoginPage = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
 
- 
-  const onChange = (e) =>{
-    setConnect({...setConnect,[e.target.name]: e.target.value})
-  }
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    const formData = {
-      email: connect.email,
-      password: connect.password,
-    };
-  
+  const [connect, setConnect] = useState({ email: '', password: '' }); // Initial state for login credentials
+
+  const handleChange = (event) => {
+    setConnect({ ...connect, [event.target.name]: event.target.value }); // Update state with new values
+  };
+
+  const onSubmit = async (data) => {
     try {
-      // Submit form data (formData) to your API using axios or similar
-      const response = await axios.post('http://localhost:3000/router/login', formData);
-  
-      // Process response and display success or error messages
-      // ...
-  
+      const response = await axios.post('http://localhost:3000/router/login', data);
+
+      // Handle successful login
+      if (response.data.success) {
+        localStorage.setItem('token', response.data.token); // Store token in local storage
+        navigate('/protected-page'); // Redirect to a protected page (replace with your desired page)
+      } else {
+        // Display error message based on response.data.message (if provided)
+        console.error('Login failed:', response.data.message);
+        alert('Identifiants incorrects. Veuillez réessayer.'); // User-friendly error message
+      }
     } catch (error) {
-      console.error(error);
-      // Handle errors appropriately
-      // ...
+      console.error('Error during login:', error);
+      alert('Une erreur est survenue. Veuillez réessayer plus tard.'); // Generic error message
     }
   };
-  
 
-  // const handleSubmit = (e) =>{
-  //   e.preventDefault()
-  //   console.log(connect)
-  //   axios.post('http://localhost:3000/router/login', connect)
-  //   .then(res => console.log(res))
-  //   .catch(err => console.log(err))
-  // }
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setIsLoading(true); // Indique que la requête est en cours
-
-  //   try {
-  //     const response = await axios.post('http://localhost:6000/router/login', {
-  //       email,
-  //       password,
-  //     });
-
-  //     setEmail('');
-  //     setPassword('');
-  //     setErrorMessage(null);
-  //     setIsLoading(false);
-
-  //     // Stocker le token en local storage (exemple)
-  //     localStorage.setItem('token', response.data.token);
-
-  //     // Rediriger vers la page d'accueil ou une autre page protégée
-  //     window.location.href = '/'; // Remplacer par la route souhaitée
-  //   } catch (error) {
-  //     console.error(error);
-  //     setIsLoading(false);
-  //     setErrorMessage(error.response?.data?.message || 'Mot de Passe ou Email incorrect');
-  //   }
-  // };
-
-  // const [register, setRegister] = useState({
-
-  // });
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-gray-100">
       <div className="w-[350px] bg-white rounded-lg shadow-lg">
         <h2 className="text-center text-2xl font-medium py-4">Connexion</h2>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="px-4 py-2">
             <label htmlFor="email" className="block text-sm font-medium mb-1">
               Email
@@ -87,14 +48,13 @@ const LoginPage = () => {
               id="email"
               name="email"
               value={connect.email}
-              onChange={onChange}
+              onChange={handleChange}
               required
               className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               {...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })}
             />
-            
+            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
           </div>
-          {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
           <div className="px-4 py-2">
             <label htmlFor="password" className="block text-sm font-medium mb-1">
@@ -104,27 +64,21 @@ const LoginPage = () => {
               type="password"
               id="password"
               name="password"
-              {...register('password', { required: true, minLength: 8 })}
               value={connect.password}
-              onChange={onChange}
+              onChange={handleChange}
               required
               className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              {...register('password', { required: true, minLength: 8 })}
             />
+            {errors.password && <p className="text-red-500 text-sm">{errors.password.email.message}</p>} {/* Typo corrected */}
           </div>
-          {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
 
           <div className="px-4 py-3">
-            <button
-              type="submit"
-              // disabled={isLoading}
-              className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            > Se Connecter
-              {/* {isLoading ? 'Connexion...' : 'Se connecter'} */}
+            <button type="submit" className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Se Connecter
             </button>
           </div>
-          {/* {errorMessage && <p className="text-red-500 text-sm text-center">{errorMessage}</p>} */}
         </form>
-
 
         <div className="px-4 py-2 text-center">
           <p>Pas encore de compte ? <Link to="/signup" className="text-blue-500">S'inscrire</Link></p>

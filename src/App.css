@@ -68,3 +68,12 @@
     }
   }
 }
+
+.error{
+  color: tomato;
+  text-align: center;
+}
+.error:before{
+  display: inline;
+  content: '⚠';
+}

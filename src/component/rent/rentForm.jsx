@@ -5,7 +5,7 @@ import * as yup from 'yup';
 export default function RentForm() {
     const schema = yup
         .object({
-            name: yup
+            nom: yup
                 .string()
                 .max(50)
                 .required("Veillez entrer votre nom"),
@@ -19,13 +19,16 @@ export default function RentForm() {
                 .required("Veillez entrer votre numéro"),
             message: yup
                 .string()
-                .required("Veillez saisir le texte"),
+                .required("Veillez saisir le texte")
         })
-    const [register,  errors , hundleSubmit] = useForm({
+
+        .required();
+
+    const {register, formState: { errors }, handleSubmit} = useForm({
         resolver: yupResolver(schema)
     })
-    const onSubmit = () =>{
-    alert("Merci d'avoir rempli le formulaire")
+    const onSubmit = () => {
+        alert("Merci d'avoir rempli le formulaire")
     }
 
     return (
@@ -33,7 +36,7 @@ export default function RentForm() {
             <div className="bg-white rounded-lg shadow-lg w-[100%]">
                 <h2 className="text-center text-2xl font-medium">Ecrire au Propiétaire</h2>
 
-                <form onSubmit={hundleSubmit(onSubmit)} >
+                <form onSubmit={handleSubmit(onSubmit)} >
                     <div className="px-4">
                         <label htmlFor="name" className="block text-sm font-medium mb-1">
                             Nom
@@ -41,13 +44,13 @@ export default function RentForm() {
                         <input
                             name="nom"
                             type="text"
-                            id="name"
-                            {...register('name')}
+                            id="nom"
                             required
+                            {...register('nom')}
                             className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
-                        {errors.name && <p className="">{errors.name.message}</p>}
                     </div>
+                    {errors.nom && <p className='error'>{errors.nom.message}</p>}
                     <div className="px-4">
                         <label htmlFor="email" className="block text-sm font-medium mb-1">
                             Email
@@ -60,9 +63,8 @@ export default function RentForm() {
                             {...register('email')}
                             className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
-                        {errors.email && <p className="">{errors.email.message}</p>}
                     </div>
-
+                    {errors.email && <p className='error'>{errors.email.message}</p>}
                     <div className="px-4">
                         <label htmlFor="phone" className="block text-sm font-medium mb-1">
                             Téléphone
@@ -75,18 +77,20 @@ export default function RentForm() {
                             {...register('phone')}
                             className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
-                        {errors.phone && <p className="">{errors.phone.message}</p>}
+
                     </div>
+                    {errors.phone && <p className='error'>{errors.phone.message}</p>}
 
                     <div className="flex flex-col px-4">
                         <label htmlFor="message" className="text-sm font-medium text-gray-700">
+                            {' '}
                             Message
                         </label>
-                        <textarea {...register('message')} className='border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' name="message" id="" cols="10" rows="5" placeholder='Ecrire votre message'  >
+                        <textarea {...register('message')} className='border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' name="message" id="message" cols="10" rows="5" placeholder='Ecrire votre message'  >
 
                         </textarea>
-                        {errors.message && <p className="">{errors.message.message}</p>}
                     </div>
+                    {errors.message && <p className='error'>{errors.message.message}</p>}
 
                     <div className='flex flex-col items-center'>
                         <button

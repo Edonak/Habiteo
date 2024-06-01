@@ -17,7 +17,7 @@ const SignupPage = () => {
   const onSubmit = async (data) => {
 try{(console.log(data))
     console.log(data);
-    await axios.post('http://localhost:3000/router/register', data)
+    await axios.post('https://capstone2-c1-edonak.onrender.com/router/register', data)
     console.log("Response", Response.data)
     navigate('/saleHouse');
   }

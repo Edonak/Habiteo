@@ -5,15 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const SignupPage = () => {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const navigate = useNavigate();
-
-  // function getEnty(value) {
-  //   console.log(value)
-  // }
-
-  // const handleInput = (e) => {
-  //   console.log("e", e)
-  //   // setRegister({ ...register, [e.target.name]: e.target.value });
-  // };
   const onSubmit = async (data) => {
 try{(console.log(data))
     console.log(data);

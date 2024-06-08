@@ -1,44 +1,34 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
-import axios from 'axios'; // Re-introduced for API calls
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors } } = useForm();
-
-  const [connect, setConnect] = useState({ email: '', password: '' }); // Initial state for login credentials
-
-  const handleChange = (event) => {
-    setConnect({ ...connect, [event.target.name]: event.target.value }); // Update state with new values
-  };
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/router/login', data);
-
-      // Handle successful login
+      const response = await axios.post('https://capstone2-c1-edonak.onrender.com/router/login', data);
       if (response.data.success) {
-        localStorage.setItem('token', response.data.token); // Store token in local storage
-        navigate('/protected-page'); // Redirect to a protected page (replace with your desired page)
+        // Store token and redirect to page X
+        localStorage.setItem('token', response.data.token);
+        navigate('/saleHouse');
       } else {
-        // Display error message based on response.data.message (if provided)
+        // Display error message
         console.error('Login failed:', response.data.message);
-        alert('Identifiants incorrects. Veuillez réessayer.'); // User-friendly error message
+        alert(response.data.message);
       }
     } catch (error) {
-      console.error('Error during login:', error);
-      alert('Une erreur est survenue. Veuillez réessayer plus tard.'); // Generic error message
+      console.error(error);
+      alert('Une erreur est survenue. Veuillez réessayer plus tard.');
     }
-  };
-
+  }
   return (
     <div className="flex flex-col min-h-screen items-center justify-center bg-gray-100">
       <div className="w-[350px] bg-white rounded-lg shadow-lg">
         <h2 className="text-center text-2xl font-medium py-4">Connexion</h2>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={onSubmit}>
           <div className="px-4 py-2">
             <label htmlFor="email" className="block text-sm font-medium mb-1">
               Email
@@ -47,13 +37,9 @@ const LoginPage = () => {
               type="email"
               id="email"
               name="email"
-              value={connect.email}
-              onChange={handleChange}
               required
               className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              {...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })}
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
           </div>
 
           <div className="px-4 py-2">
@@ -64,13 +50,9 @@ const LoginPage = () => {
               type="password"
               id="password"
               name="password"
-              value={connect.password}
-              onChange={handleChange}
               required
               className="w-full px-2 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              {...register('password', { required: true, minLength: 8 })}
             />
-            {errors.password && <p className="text-red-500 text-sm">{errors.password.email.message}</p>} {/* Typo corrected */}
           </div>
 
           <div className="px-4 py-3">
@@ -98,3 +80,9 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+
+
+
+
+

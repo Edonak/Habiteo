@@ -3,21 +3,6 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
 const SaleForm = () => {
-    // const handlePhotoChange = (event) => {
-    //     if (event.target.files && event.target.files[0]) {
-    //         setShowForm(URL.createObjectURL(event.target.files[0]));
-    //       }
-    // };
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log('Form submitted:', {
-    //         commune,
-    //         rooms,
-    //         photo,
-    //     });
-    // };
-
     const { register, handleSubmit } = useForm()
     const navigate = useNavigate()
     const onSubmit = async (data) => {
@@ -31,18 +16,6 @@ const SaleForm = () => {
             console.log("error", error)
         }
     }
-
-
-    //     "userId":1,
-    //    "id":1,
-    //     "adresse":"17 bbiuzouz",
-    //     "surface":"1456497km",
-    //     "prix":"500$",
-    //     "nombreDePiece":4,
-    //     "photoUrl":"qhguizupipz",
-    //     "disponibilite":true,
-    //     "houseType":"Location",
-    //     "proprietaire":"hjgsihpz"
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm mx-auto mt-4" >
             <div className="mb-4">

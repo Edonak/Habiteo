@@ -2,26 +2,34 @@ import ImageHeroSection from './../../assets/images/Hero Section.svg';
 import { FaSearch } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function HeroSection() {
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
 
-    const handleSearch = () => {
-        axios.get(`/api/search?term=${searchTerm}`)
-            .then((response) => {
-                setSearchResults(response.data.results);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    };
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-    useEffect(() => {
-        if (searchTerm) {
-            handleSearch();
-        }
-    }, [searchTerm]);
+  const handleSubmit = () => {
+    axios.post('/search', { searchTerm })
+      .then(response => {
+        setSearchResults(response.data);
+        navigate('/search-results', { state: { results: JSON.stringify(response.data) } });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    if (searchTerm) {
+      handleSubmit();
+    }
+  }, [searchTerm]);
+
 
     return (
         <section className='section1'>
@@ -29,9 +37,8 @@ export default function HeroSection() {
                 <img src={ImageHeroSection} alt="hero section image" />
             </div>
             <div className='section3 bg-white rounded-lg h-12 px-4 flex items-center shadow-md relative md:w-3/4 lg:w-1/4'>
-                <input type="search" name="search" id="" placeholder='Votre adresse actuelle' className='bg-transparent border-none h-full focus:outline-none text-base w-full ml-2' value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)} />
-                <FaSearch className="text-[#004AAD]" onClick={handleSearch} />
+                <input value={searchTerm} onChange={handleSearchChange} type="search" name="search" id="" placeholder='Votre adresse actuelle' className='bg-transparent border-none h-full focus:outline-none text-base w-full ml-2'/>
+                <FaSearch className="text-[#004AAD]" onClick={handleSubmit} />
             </div>
         </section>
 

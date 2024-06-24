@@ -10,11 +10,9 @@ const LoginPage = () => {
     try {
       const response = await axios.post('https://capstone2-c1-edonak.onrender.com/router/login', data);
       if (response.data.success) {
-        // Store token and redirect to page X
         localStorage.setItem('token', response.data.token);
         navigate('/saleHouse');
       } else {
-        // Display error message
         console.error('Login failed:', response.data.message);
         alert(response.data.message);
       }

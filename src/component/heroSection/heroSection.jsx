@@ -44,18 +44,3 @@ export default function HeroSection() {
 
     );
 }
-
-//Back Recherch
-// app.get('/search/:searchTerm', async (req, res) => {
-//   const searchTerm = req.params.searchTerm;
-//   const results = await prisma.product.findMany({
-//     where: {
-//       OR: [
-//         { name: { contains: searchTerm } },
-//         { description: { contains: searchTerm } },
-//         // Ajoutez d'autres champs si nécessaire
-//       ],
-//     },
-//   });
-//   res.json(results);
-// });

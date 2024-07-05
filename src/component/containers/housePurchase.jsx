@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import homeDatas from '../../datas/homes-datas.json';
+import { NavLink } from 'react-router-dom';
 
 export default function HousePurchase() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,14 +17,16 @@ const data = []
         {homeDatas.housePurchase.length > 0? <div className="flex w-[100%] justify-center ">
           
             <div className='flex flex-wrap w-[80%] gap-9 justify-center'>
-            {homeDatas.housePurchase.map((item, index) => (
+            {homeDatas.housePurchase.map((exo, index) => (
                 <div key={index} className='w-[20%] border-solid rounded-xl gap-10 sell-card'>
-                    <img src={item.photoUrl} alt="" className="w-[100%] h-[20vh] rounded-t-xl" />
+                    <NavLink to={`/${exo.id}`}>
+                    <img src={exo.photoUrl} alt="" className="w-[100%] h-[20vh] rounded-t-xl" />
+                    </NavLink>
                     <div className='sell-card-content px-2'>
-                        <p className='font-bold'>{item.prix}</p>
-                        <p className='text-sm'>{item.nombreDePiece}</p>
-                        <p className='text-sm'>{item.adresse}</p>
-                        <p className=''>{item.propietaire}</p>
+                        <p className='font-bold'>{exo.prix}</p>
+                        <p className='text-sm'>{exo.nombreDePiece}</p>
+                        <p className='text-sm'>{exo.adresse}</p>
+                        <p className=''>{exo.propietaire}</p>
                     </div>
                 </div>
             ))} 

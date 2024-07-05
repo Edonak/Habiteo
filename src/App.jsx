@@ -9,6 +9,7 @@ import SaleForm from './component/saleHouse/saleForm'
 import SignupPage from './component/authentification/signup'
 import LoginPage from './component/authentification/login'
 import Rent from './component/rent/rent'
+import Purchase from './component/purchase/purchase'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/form" element ={<SaleForm />} />
         <Route path="/:renthouse" element={<Rent />}/>
         <Route path="/saleHouse" element={<SaleForm />}/>
+        <Route path='/:purchasehouse' element={<Purchase />} />
       </Routes>
     </BrowserRouter>
     </>

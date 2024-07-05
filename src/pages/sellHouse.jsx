@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from '../component/header/navbar';
 import HeroSectionSale from '../component/heroSection/heroSectionSale';
 import Footer from '../component/footer/footer';

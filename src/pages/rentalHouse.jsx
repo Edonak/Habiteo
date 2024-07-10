@@ -4,7 +4,7 @@ import HouseLocation from '../component/containers/houseLocation';
 import RentHouseSearch from '../component/primaryComponents/rentHouseSearch';
 
 export default function RentalHouse() {
-  
+
 
     return (
         <section>
@@ -12,9 +12,8 @@ export default function RentalHouse() {
             <main>
                 <RentHouseSearch />
                 <div>
-                <HouseLocation />
+                    <HouseLocation />
                 </div>
-                
             </main>
             <Footer />
         </section>

@@ -12,7 +12,7 @@ export default function PurchaseDetail(datas) {
                 </div>
                 <div>
                   <p>La maison a {housePurchase.nombreDePiece}</p>
-                  <p>Voici l`adresse de maison {housePurchase.adresse}</p>
+                  <p>Voici l`adresse de maison hhhhh {housePurchase.adresse}</p>
                   <p>Nous decaissons la garentie de {housePurchase.garentie} mois</p>
                   <p>{housePurchase.propietaire}</p>
                   <p>Interesser? Pour toute visite {housePurchase.numero} </p>

@@ -4,7 +4,7 @@ import Logo from './../../assets/images/Habiteo-logo.png'
 
 const Footer = () => {
   return (
-    <footer className="footer mt-16 bg-[#004AAD] text-white p-5">
+    <footer className="footer bg-[#004AAD] text-white pb-5">
       <div className="footer-content">
         <nav className="footer-nav">
           <NavbarLink />

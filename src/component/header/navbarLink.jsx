@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import React from 'react';
 
 
 export default function NavbarLink() {
     return (
-        <nav className='flex justify-between gap-10 text-orange-500 items-center mt-6 pr-6 font-semibold'>
+        <nav className=' text-orange-500 items-center font-semibold navbarlink'>
             <NavLink to='/rent'>Louer</NavLink>
             <NavLink to='/sell'>Vendre</NavLink>
             <NavLink to='/buy'>Acheter</NavLink>

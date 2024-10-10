@@ -1,3 +1,10 @@
+.navbarlink{
+  display:flex;
+  justify-content:space-between;
+  gap:2.5rem;
+  margin-top:1.5rem;
+  padding-right:1.5rem;
+}
 .section {
 
     display: flex;
@@ -21,6 +28,7 @@
 
 .footer {
   text-align: center;
+  margin-top:4rem;
 }
 
 .social-links {

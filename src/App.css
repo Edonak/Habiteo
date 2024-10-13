@@ -52,15 +52,6 @@
   margin: 0 10px;
 }
 
-.house-card{
-  cursor: pointer;
-  transition-duration: .5s;
-	transition-property: transform;
-	&:hover {
-		transform: scale(1.1);
-	}
-}
-
 
 /*Style sell*/
 .sell-card{
@@ -85,7 +76,7 @@
   display: inline;
   content: '⚠';
 }
-
+/*House detail style*/
 .houseDetail{
   background-color : White; 
   display:flex;
@@ -93,4 +84,13 @@
   gap :2rem;
   margin-top:3rem;
   justify-content:center;
+}
+.house-card{
+  width:25%;
+  cursor: pointer;
+  transition-duration: .5s;
+	transition-property: transform;
+	&:hover {
+		transform: scale(1.1);
+	}
 }

@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 export default function HouseDetail() {
     return (
         <section className='text-justify houseDetail'>
-            <div className='w-[25%] border-solid rounded-3xl shadow-2xl flex flex-col items-center house-card'>
+            <div className='border-solid rounded-3xl shadow-2xl items-center house-card'>
                 <div className=''>
                     <img src={VenteImage} alt="" />
                 </div>

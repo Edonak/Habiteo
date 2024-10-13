@@ -1,13 +1,12 @@
-import React from 'react';
 import GeneralButton from '../primaryComponents/generalButton';
 import LocationImage from './../../assets/images/Image card louer.svg';
 import ParcoursImage from './../../assets/images/Image card parcourir.svg';
 import VenteImage from './../../assets/images/image card vendre.svg';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function HouseDetail() {
     return (
-        <section className='flex w-[100%] house-detail gap-8 mt-12 bg-white justify-center text-justify'>
+        <section className='text-justify houseDetail'>
             <div className='w-[25%] border-solid rounded-3xl shadow-2xl flex flex-col items-center house-card'>
                 <div className=''>
                     <img src={VenteImage} alt="" />

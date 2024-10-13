@@ -85,3 +85,12 @@
   display: inline;
   content: '⚠';
 }
+
+.houseDetail{
+  background-color : White; 
+  display:flex;
+  width:100%;
+  gap :2rem;
+  margin-top:3rem;
+  justify-content:center;
+}

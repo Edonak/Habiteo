@@ -7,10 +7,10 @@ import { NavLink } from 'react-router-dom';
 export default function HouseDetail() {
     return (
         <section className='text-justify houseDetail'>
-            <div className='border-solid rounded-3xl shadow-2xl items-center house-card'>
-                <div className=''>
+            <div className='border-solid rounded-3xl shadow-2xl house-card'>
+                <figure>
                     <img src={VenteImage} alt="" />
-                </div>
+                </figure>
                 <div className='p-4'>
                     <h4 className='text-[1.3rem] font-medium pb-4 text-center'>Vendre une maison</h4>
                     <p>Quel que soit le chemin que vous empruntez pour vendre votre maison,
@@ -21,10 +21,10 @@ export default function HouseDetail() {
                     </div>
                 </div>
             </div>
-            <div className='w-[25%] border-solid rounded-3xl shadow-2xl flex flex-col items-center house-card'>
-                <div>
+            <div className='border-solid rounded-3xl shadow-2xl house-card'>
+                <figure>
                     <img src={LocationImage} alt="image maison à louer" />
-                </div>
+                </figure>
                 <div className='p-4'>
                     <h4 className='text-[1.3rem] font-medium pb-4 text-center'>Louer une maison</h4>
                     <p>Nous créons une expérience en ligne transparente,
@@ -35,10 +35,10 @@ export default function HouseDetail() {
                     </div>
                 </div>
             </div>
-            <div className='w-[25%] border-solid rounded-3xl shadow-2xl house-card'>
-                <div>
+            <div className='border-solid rounded-3xl shadow-2xl house-card'>
+                <figure>
                     <img src={ParcoursImage} alt="parcourir les images" />
-                </div>
+                </figure>
                 <div className='p-4'>
                     <h4 className='text-[1.3rem] font-medium pb-4 text-center'>Parcourir des maisons</h4>
                     <p>Trouvez votre place avec une expérience photo immersive

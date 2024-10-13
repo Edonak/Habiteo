@@ -5,16 +5,16 @@ import { NavLink } from 'react-router-dom';
 export default function HousePurchase() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleImages, setVisibleImages] = useState(3);
-const data = []
+    const data = []
    
     
     return (
-        <section className=" w-[100%] mb-12 p-2 bg-blue-50 pb-8">
-            <div className='pb-12 pl-12'>
+        <section className=" house-purchase">
+            <div className='house-purchase-title'>
                 <h2 className='text-[1.3rem] font-medium text-[#004AAD]'>Achat Maison</h2>
                 <p>Acheter une maison en toute sécurité</p>
             </div>
-        {homeDatas.housePurchase.length > 0? <div className="flex w-[100%] justify-center ">
+        {homeDatas.housePurchase.length > 0? <div className="house-purchase-container ">
           
             <div className='flex flex-wrap w-[80%] gap-9 justify-center'>
             {homeDatas.housePurchase.map((exo, index) => (

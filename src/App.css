@@ -76,6 +76,26 @@
   display: inline;
   content: '⚠';
 }
+
+/*House purchase style*/
+
+.house-purchase{
+  width:100%;
+  margin-bottom:3rem;
+  padding-bottom:2rem;
+  background-color: #ebf8ff
+}
+.house-purchase-title{
+  text-align:center;
+  padding-bottom:2.5rem;
+  padding-top:2.5rem;
+}
+.house-purchase-container{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
 /*House detail style*/
 .houseDetail{
   background-color : White; 

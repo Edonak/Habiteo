@@ -52,15 +52,13 @@
     .sell-card{
         border: 1px solid rgba(153, 151, 151, 0.349);
         cursor: pointer;
-        width: 50%;
+        width: 43%;
         border-style: solid;
         border-radius: 1rem; 
-        gap: 2.5rem;
       }
-      .house-purchase-data{
+      .house-purchase-container {
         width:100%;
         display:flex;
-        gap:2.25rem;
         justify-content:center;
         flex-wrap: wrap;  
       

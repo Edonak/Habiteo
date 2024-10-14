@@ -53,21 +53,6 @@
 }
 
 
-/*Style sell*/
-.sell-card{
-  border: 1px solid rgba(153, 151, 151, 0.349);
-  cursor: pointer;
-}
-.sell-card {
-  transition-duration: .5s;
-	transition-property: transform;
-  &:hover{
-    .sell-card-content{
-      background: #b9b8b815;
-    }
-  }
-}
-
 .error{
   color: tomato;
   text-align: center;
@@ -94,6 +79,33 @@
   width:100%;
   display:flex;
   justify-content:center;
+}
+.house-purchase-data{
+  width:80%;
+  display:flex;
+  gap:2.25rem;
+  justify-content:center;
+  flex-wrap: wrap;  
+
+}
+
+/*Style sell*/
+.sell-card{
+  border: 1px solid rgba(153, 151, 151, 0.349);
+  cursor: pointer;
+  width: 20%;
+  border-style: solid;
+  border-radius: 1rem; 
+  gap: 2.5rem;
+}
+.sell-card {
+  transition-duration: .5s;
+	transition-property: transform;
+  &:hover{
+    .sell-card-content{
+      background: #b9b8b815;
+    }
+  }
 }
 
 /*House detail style*/

@@ -16,9 +16,9 @@ export default function HousePurchase() {
             </div>
         {homeDatas.housePurchase.length > 0? <div className="house-purchase-container ">
           
-            <div className='flex flex-wrap w-[80%] gap-9 justify-center'>
+            <div className='house-purchase-data '>
             {homeDatas.housePurchase.map((exo, index) => (
-                <div key={index} className='w-[20%] border-solid rounded-xl gap-10 sell-card'>
+                <div key={index} className='sell-card'>
                     <NavLink to={`/${exo.id}`}>
                     <img src={exo.photoUrl} alt="" className="w-[100%] h-[20vh] rounded-t-xl" />
                     </NavLink>

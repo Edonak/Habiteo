@@ -126,3 +126,15 @@
 		transform: scale(1.1);
 	}
 }
+
+
+
+/* sellHouse style */
+.details{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  gap:2rem;
+  margin-top:2rem;
+  background-color : white; 
+}

@@ -14,7 +14,7 @@ export default function SellHouse() {
             <main>
                 <HeroSectionSale />
                 <SellDetail />
-                <section className='flex w-[100%] gap-8 mt-12 bg-white justify-center text-justify'>
+                <section className='text-justify details'>
                     <div className='w-[25%] flex flex-col items-center sell-card'>
                         <div className=''>
                             <img src={imageEtapeVente} alt="image comment vendre une maison" />

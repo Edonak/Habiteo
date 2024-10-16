@@ -10,7 +10,7 @@
 @media screen and (max-width: 768px) {
     .footer {
         width:100%;
-        background:red;
+        background-color: #004AAD;;
       }
       .social-links {
         width:70%;

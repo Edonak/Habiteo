@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import ButtonVente from '../primaryComponents/buttonVente';
 export default function SellDetail({ onClick }) {
     return (
-        <section className='sale-detail w-[100%] bg-gray-100 bg-opacity-60 flex flex-col items-center'>
-            <div className='w-[80%] h-[60vh] flex justify-between items-center gap-3rem'>
+        <section className='sale-detail'>
+            <div className=' sale-detail-vente'>
                 <div className='w-[50%] flex flex-col items-center text-justify'>
                     <h2 className='text-[1.3rem] font-medium text-[#004AAD]'>Vendez vous-même votre maison</h2>
                     <p className='p-7'>Décider de vendre votre maison vous-même est une bonne chose car,
